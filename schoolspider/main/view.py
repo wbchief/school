@@ -26,7 +26,7 @@ def login():
         username = form.get('username')
         password = form.get('password')
         login = Login.query.filter_by(username=username).first()
-        if login.password == password and login.flag == '1':
+        if login.password == password and login.flag != '0':
             session['logined_in'] = True
             session['username'] = username
             print('--------------')
@@ -49,23 +49,45 @@ def assess():
             student_number = form.get('username')
             password = form.get('password')
             print(form)
+            username = session.get('username')
 
             flash('正在评估')
+
+            user = Login.query.filter_by(username=username).first()
+            # print(user)
+            # print(user.flag)
+            # if user.flag == '2':
+            #     result = Login.query.filter_by(username=username).update({'counts': user.counts + 1})
+            # else:
+            #     result = Login.query.filter_by(username=username).update({'flag': '0'})
+            # print(result)
+            # flash('评估完成')
+            # db.session.commit()
             spider = SchoolSpider(student_number, password)
-            flag = spider.login_assess()
-            flag = True
-            if flag:
+            classes = spider.login_assess()
+            print(classes)
+            data = ""
+            if classes:
+                for value in classes[1:]:
+                    print(value)
+                    if spider.assess(value):
+                        data += value.get('name') + ', '
+                    else:
+                        flash(value.get('name'), '评估失败')
+                    time.sleep(1)
+                user = Login.query.filter_by(username=username).first()
+                if user.flag == '2':
+                    result = Login.query.filter_by(username=username).update({'counts': user.counts + 1})
+                else:
+                    result = Login.query.filter_by(username=username).update({'flag': '0'})
+                flash(data + '  已完成评估，请核对一下哦')
                 flash('评估完成')
-                username = session.get('username')
-
-                result = Login.query.filter_by(username=username).update({'flag': '0'})
-                print(result)
                 db.session.commit()
-                return redirect(url_for('login'))
             else:
-                flash('评估失败，请重新评估')
-                return render_template('index.html')
+                flash('对不起哦，本次评估失败，请一会尔重试一下呗')
+            spider.driver.close()
 
+        flash('评估会需要一小会时间哦')
         return render_template('index.html')
     else:
         return redirect(url_for('login'))

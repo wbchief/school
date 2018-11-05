@@ -8,7 +8,8 @@
     <link href="../static/resources/Hplus-v.3.2.0/css/animate.css" rel="stylesheet">
     <link href="../static/resources/Hplus-v.3.2.0/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
     <link href="../static/resources/Hplus-v.3.2.0/css/style.css?v=3.2.0" rel="stylesheet">
-    <link href="../static/resources/Hplus-v.3.2.0/css/login.css" rel="stylesheet">
+    {% block background %} {% endblock %}
+
     <link href="../static/resources/jQuery.filer-1.2/css/jquery.filer.css" rel="stylesheet" type="text/css"/>
     <link href="../static/resources/jQuery.filer-1.2/css/custom.css" rel="stylesheet" type="text/css"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -25,7 +26,14 @@
 <div style="position:absolute;z-index:1">
     <canvas id="canvas" style="width:5%;height:5%"></canvas>
 </div>
+
 <div class="signinpanel">
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-warning">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        {{ message }}
+    </div>
+    {% endfor %}
     <div class="row">
         <div class="col-sm-7">
             <div class="signin-info">
@@ -50,7 +58,7 @@
                         &nbsp; &nbsp; &nbsp;理工学子都在用
                     </li>
                 </ul>
-                <strong>还没有账号？ <a href="/zhu/ce">立即注册&raquo;</a></strong>
+                <!--<strong>还没有账号？ <a href="/zhu/ce">立即注册&raquo;</a></strong>-->
             </div>
         </div>
         {% block page_content %} {% endblock %}

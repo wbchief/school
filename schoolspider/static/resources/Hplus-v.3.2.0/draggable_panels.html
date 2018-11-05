@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <title>H+ 后台主题UI框架 - 拖动面板</title>
+    <meta name="keywords" content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
+    <meta name="description" content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
+
+    <link href="css/bootstrap.min.css?v=3.4.0" rel="stylesheet">
+    <link href="css/font-awesome.css?v=4.3.0" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css?v=3.2.0" rel="stylesheet">
+	<style type="text/css">
+	.tab-content > .tab-pane {
+	  height:200px;
+	  overflow-y:scroll;
+	  width:100%;
+	}
+	</style>
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content  animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>我的待办</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="table_basic.html#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user">
+                                <li><a href="table_basic.html#">选项1</a>
+                                </li>
+                                <li><a href="table_basic.html#">选项2</a>
+                                </li>
+                            </ul>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                            <a >
+                                <i class="badge badge-success">more</i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+						<div style="height:200px;overflow-y:auto">
+                        <table class="table table-hover" >
+                            <thead>
+                                <tr>
+                                    <th>编号</th>
+                                    <th>业务条线名称</th>
+                                    <th>条线经理</th>
+                                    <th>备注</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                            </tbody>
+                        </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>最新动态</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="table_basic.html#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user">
+                                <li><a href="table_basic.html#">选项1</a>
+                                </li>
+                                <li><a href="table_basic.html#">选项2</a>
+                                </li>
+                            </ul>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                            <a >
+                                <i class="badge badge-success">more</i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+						<div style="height:200px;overflow-y:auto">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>业务条线名称</th>
+                                    <th>条线经理</th>
+                                    <th>备注</th>
+                                </tr>
+                                
+                            </thead>
+                            <tbody>
+                                
+                             </tbody>
+                        </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+          <div class="row">
+            <div class="col-sm-6">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>指派给我的需求</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="table_basic.html#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user">
+                                <li><a href="table_basic.html#">选项1</a>
+                                </li>
+                                <li><a href="table_basic.html#">选项2</a>
+                                </li>
+                            </ul>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                            <a >
+                                <i class="badge badge-success">more</i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content" >
+ 					  <div style="height:200px;overflow-y:auto">
+                        <table class="table table-hover ">
+                            <thead>
+                                <tr>
+                                  
+                                    <th>编号</th>
+                                    <th>需求名称</th>
+                                    <th>系统名称</th>
+                                    <th>测试经理</th>
+                                    <th>状态</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  
+                                    <td>测试条线一
+                                    </td>
+                                    <td>张三</td>
+                                    <td>张三</td>
+                                    <td>张三</td>
+                                    <td class="text-navy"> </td>
+                                </tr>
+                                <tr>
+                                    
+                                    <td>测试条线二</span>
+                                    </td>
+                                    <td>李四</td>
+                                    <td>李四</td>
+                                    <td>李四</td>
+                                    <td class="text-warning"> </td>
+                                </tr>
+                                <tr>
+                                  
+                                    <td>测试条线三
+                                    </td>
+                                    <td>王麻子</td>
+                                    <td>王麻子</td>
+                                    <td>王麻子</td>
+                                    <td class="text-navy"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                       </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>我的测试项目</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="table_basic.html#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user">
+                                <li><a href="table_basic.html#">选项1</a>
+                                </li>
+                                <li><a href="table_basic.html#">选项2</a>
+                                </li>
+                            </ul>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                            <a >
+                                <i class="badge badge-success">more</i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+					   <div style="height:200px;overflow-y:auto">
+                        <table class="table table-hover" >
+                            <thead>
+                                <tr>
+                                    <th>编号</th>
+                                    <th>测试项目名称</th>
+                                    <th>开始时间</th>
+                                    <th>结束时间</th>
+                                    <th>测试经理</th>
+                                    <th>项目状态</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                     <td>测试条线一
+                                    </td>
+                                    <td>测试条线一
+                                    </td>
+                                    <td>张三</td>
+                                    <td>张三</td>
+                                    <td class="text-navy"> </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>测试条线一
+                                    </td>
+                                    <td>测试条线二</span>
+                                    </td>
+                                    <td>李四</td>
+                                    <td>李四</td>
+                                    <td class="text-warning"> </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>测试条线一
+                                    </td>
+                                    <td>测试条线三
+                                    </td>
+                                    <td>王麻子</td>
+                                    <td>王麻子</td>
+                                    <td class="text-navy"></td>
+                                </tr>
+                                 <tr>
+                                    <td>3</td>
+                                    <td>测试条线一
+                                    </td>
+                                    <td>测试条线三
+                                    </td>
+                                    <td>王麻子</td>
+                                    <td>王麻子</td>
+                                    <td class="text-navy"></td>
+                                </tr>
+                                 <tr>
+                                    <td>3</td>
+                                    <td>测试条线一
+                                    </td>
+                                    <td>测试条线三
+                                    </td>
+                                    <td>王麻子</td>
+                                    <td>王麻子</td>
+                                    <td class="text-navy"></td>
+                                </tr> 
+                                <tr>
+                                    <td>3</td>
+                                    <td>测试条线一
+                                    </td>
+                                    <td>测试条线三
+                                    </td>
+                                    <td>王麻子</td>
+                                    <td>王麻子</td>
+                                    <td class="text-navy"></td>
+                                </tr> 
+                                <tr>
+                                    <td>3</td>
+                                    <td>测试条线一
+                                    </td>
+                                    <td>测试条线三
+                                    </td>
+                                    <td>王麻子</td>
+                                    <td>王麻子</td>
+                                    <td class="text-navy"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>指派给我的任务</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="table_basic.html#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user">
+                                <li><a href="table_basic.html#">选项1</a>
+                                </li>
+                                <li><a href="table_basic.html#">选项2</a>
+                                </li>
+                            </ul>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                            <a >
+                                <i class="badge badge-success">more</i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+ 						<div style="height:200px;overflow-y:auto">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>编号</th>
+                                    <th>任务名称</th>
+                                    <th>负责人</th>
+                                    <th>类型</th>
+                                    <th>状态</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>测试条线一
+                                    </td>
+                                    <td>张三</td>
+                                    <td class="text-navy"> </td>
+                                    <td class="text-navy"> </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>测试条线二</span>
+                                    </td>
+                                    <td>李四</td>
+                                    <td class="text-warning"> </td>
+                                    <td class="text-navy"> </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>测试条线三
+                                    </td>
+                                    <td>王麻子</td>
+                                    <td class="text-navy"></td>
+                                    <td class="text-navy"> </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                       </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>我的缺陷</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="table_basic.html#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user">
+                                <li><a href="table_basic.html#">选项1</a>
+                                </li>
+                                <li><a href="table_basic.html#">选项2</a>
+                                </li>
+                            </ul>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                            <a >
+                                <i class="badge badge-success">more</i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+ 					  <div style="height:200px;overflow-y:auto">
+                        <table class="table ">
+                            <thead>
+                                <tr>
+                                    <th>编号</th>
+                                    <th>缺陷摘要</th>
+                                    <th>所属项目</th>
+                                    <th>严重程度</th>
+                                    <th>优先级</th>
+                                    <th>缺陷状态</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    
+                                    <td><a data-toggle="collapse" href="#faq1" >测试条线一</a>
+                                    </td>
+                                    <td>张三</td>
+                                    <td class="text-navy"> </td>
+                                    <td class="text-navy"> </td>
+                                    <td class="text-navy">11</td>
+                                </tr>
+                            	<tr style="height: 0px">
+                            	<td colspan="6" style="border:none;">
+                            	    <div class="row" style="width: 100%">
+			                        <div class="col-sm-12">
+			                            <div id="faq1" class="panel-collapse collapse faq-answer">
+			                                <p>
+			                                    1、天猫宝转入金额1元起步，资金最多不能超过5万。转入时支持使用账户余额、储蓄卡快捷方式（含卡通）；
+			                                    <br>2、在天猫购物时，可在支付宝收银台勾选使用天猫宝。天猫宝单笔单日限额为5万。当使用天猫宝支付后退款，资金自动回到天猫宝。天猫宝支付记录，可以在电脑端我的天猫宝页面中的交易记录或者支付宝钱包中的账单内查看；
+			                                </p>
+			                            </div>
+			                        </div>
+			                        </div>
+                            	</td>
+                            	</tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>测试条线二</span>
+                                    </td>
+                                    <td>李四</td>
+                                    <td class="text-warning"> </td>
+                                    <td class="text-navy"> </td>
+                                    <td class="text-navy">11</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>测试条线三
+                                    </td>
+                                    <td>王麻子</td>
+                                    <td class="text-navy"></td>
+                                    <td class="text-navy"> </td>
+                                    <td class="text-navy">11</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 全局js -->
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js?v=3.4.0"></script>
+
+
+
+    <!-- Peity -->
+    <script src="js/plugins/peity/jquery.peity.min.js"></script>
+
+    <!-- 自定义js -->
+    <script src="js/content.js?v=1.0.0"></script>
+
+
+    <script src="js/plugins/jquery-ui/jquery-ui.min.js"></script>
+
+    <!-- iCheck -->
+    <script src="js/plugins/iCheck/icheck.min.js"></script>
+
+    <!-- Peity d data  -->
+    <script src="js/demo/peity-demo.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            <!-- Enable portlets -->
+            WinMove();
+        });
+    </script>
+
+    
+
+</body>
+
+</html>

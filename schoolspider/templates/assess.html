@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+
+{% block page_content %}
+        <div class="col-sm-5">
+            <form action="{{ url_for('assess') }}" id="loginForm" method="POST">
+                <h4 class="no-margins">评估</h4>
+                <input type="text" class="form-control uname" name="username" id="number" placeholder="用户名" required=""/>
+                <input type="password" class="form-control pword m-b" name="password" id="password" placeholder="密码"
+                       required=""/>
+                <div id="errorDiv" style="color:red;font-family:monospace;font-size:small"/>
+
+
+                <button id="loginBtn" class="btn btn-success btn-block">确认</button>
+            </form>
+        </div>
+{% endblock %}

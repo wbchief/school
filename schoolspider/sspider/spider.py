@@ -9,7 +9,8 @@ class SchoolSpider:
         self.username = username
         self.password = password
 
-        self.driver = webdriver.PhantomJS()
+        #self.driver = webdriver.PhantomJS()
+        self.driver = webdriver.Chrome()
 
     def login_assess(self):
         '''
@@ -37,27 +38,37 @@ class SchoolSpider:
             for value in values:
                 classes.append({'value': value.get_attribute('value'), 'name': value.text.split('|')[0]})
 
+            return classes
 
-            for value in classes[1:]:
-                selector = Select(self.driver.find_element_by_id('m_ddlTeacher'))
-                selector.select_by_value(value.get('value'))
-                for id in range(40, 50):
-                    self.driver.find_element_by_xpath('//*[@id="{}"]'.format(str(id))).click()
-                #time.sleep(0.5)
+        except Exception as e:
+            return False
 
-                for id in range(410, 422):
-                    self.driver.find_element_by_xpath('//*[@id="{}"]'.format(str(id))).click()
-                #time.sleep(0.5)
-                m_button = self.driver.find_element_by_name('m_submit')
-                m_button.click()
-                print(value.get('name'), '已评估')
-                #time.sleep(1)
+
+    def assess(self, cls):
+        '''
+        评估
+        :param cls:
+        :return:
+        '''
+        try:
+            selector = Select(self.driver.find_element_by_id('m_ddlTeacher'))
+            selector.select_by_value(cls.get('value'))
+            for id in range(40, 50):
+                self.driver.find_element_by_xpath('//*[@id="{}"]'.format(str(id))).click()
+            #time.sleep(0.5)
+
+            for id in range(410, 422):
+                self.driver.find_element_by_xpath('//*[@id="{}"]'.format(str(id))).click()
+            #time.sleep(0.5)
+            m_button = self.driver.find_element_by_name('m_submit')
+            m_button.click()
+            print(cls.get('name'), '已评估')
             return True
+
         except Exception as e:
             print(e.args)
             return False
-        finally:
-            self.driver.close()
+
 
 
 if __name__ == '__main__':
